@@ -96,16 +96,14 @@ function openImagePopup(src) {
     // Load the full-size image
     popupImage.src = src;
 
-    // Add watermark text
-    const watermark = document.createElement('div');
-    watermark.id = "watermark";
-    watermark.classList.add('watermark');
-    watermark.textContent = 'Prodigy Photography';
-
-    // Append watermark to popup content if it's not already there
-    const popupContent = document.querySelector('.popup-content');
-    if (!document.getElementById('watermark')) {
-        popupContent.appendChild(watermark);
+    // Add watermark text if it's not already there
+    const watermark = document.getElementById('watermark');
+    if (!watermark) {
+        const newWatermark = document.createElement('div');
+        newWatermark.id = "watermark";
+        newWatermark.classList.add('watermark');
+        newWatermark.textContent = 'Prodigy Photography';
+        document.querySelector('.popup-content').appendChild(newWatermark);
     }
 
     // Adjust image dimensions after the image has fully loaded
@@ -117,13 +115,12 @@ function openImagePopup(src) {
         const aspectRatio = popupImage.naturalWidth / popupImage.naturalHeight;
 
         if (popupImage.naturalWidth > maxWidth || popupImage.naturalHeight > maxHeight) {
-            // If the image is too wide or tall, scale it down to fit within max dimensions
             if (aspectRatio > 1) {
                 // Landscape image: constrain by width first
                 popupImage.style.width = `${maxWidth}px`;
                 popupImage.style.height = `${maxWidth / aspectRatio}px`;
 
-                // If height still exceeds maxHeight after width adjustment, adjust height
+                // Adjust height if it still exceeds maxHeight
                 if (popupImage.offsetHeight > maxHeight) {
                     popupImage.style.height = `${maxHeight}px`;
                     popupImage.style.width = `${maxHeight * aspectRatio}px`;
@@ -133,7 +130,7 @@ function openImagePopup(src) {
                 popupImage.style.height = `${maxHeight}px`;
                 popupImage.style.width = `${maxHeight * aspectRatio}px`;
 
-                // If width still exceeds maxWidth after height adjustment, adjust width
+                // Adjust width if it still exceeds maxWidth
                 if (popupImage.offsetWidth > maxWidth) {
                     popupImage.style.width = `${maxWidth}px`;
                     popupImage.style.height = `${maxWidth / aspectRatio}px`;
@@ -146,12 +143,14 @@ function openImagePopup(src) {
         }
     };
 
+    // Make the popup visible
     popup.classList.add('visible');
+}
 
-    /* Disable right-click on the popup */
+// Disable right-click on the popup
     popup.addEventListener('contextmenu', (event) => event.preventDefault());
 
-    /* Attach event listener to close button */
+    // Attach event listener to close button
     const closeBtn = popup.querySelector('.close-popup-button');
     closeBtn.onclick = () => {
         popup.classList.remove('visible');
