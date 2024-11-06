@@ -159,8 +159,13 @@ function openImagePopup(src) {
 }
 
 /* Add Event Listeners for Page Elements */
-document.addEventListener('DOMContentLoaded', function () {
-    generatePhotoCards();
+document.addEventListener('DOMContentLoaded', function() {
+    const gallery = document.getElementById('gallery');
+    console.log(gallery); // Should not be null
+    generatePhotoCards(); // Make sure this line is executed after the gallery element has loaded
+});
+    // Additional initialization logic if needed
+});
 
     // Toggle Cart Visibility
     const cartButton = document.getElementById('cart-button');
