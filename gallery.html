@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Gallery with Cart</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        footer {
+            text-align: center; /* Ensures footer content is centered */
+            padding-top: 100px; /* Optional: add padding if needed */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Prodigy Photography</h1>
+        <div class="header-buttons">
+            <a href="index.html" class="header-button">Home</a>
+            <a href="gallery.html" class="header-button">Gallery</a>
+            <a href="contact.html" class="header-button">Contact</a>
+        </div>
+        <button id="cart-button">Cart (<span id="cart-count">0</span>)</button>
+    </header>
+
+    <section class="gallery-container">
+        <div class="gallery" id="gallery"></div>
+    </section>
+
+    <div id="cart" class="cart">
+        <h2>Your Cart</h2>
+        <ul id="cart-items"></ul>
+        <div id="paypal-button-container"></div>
+    </div>
+
+    <!-- Image Popup -->
+    <div id="image-popup" class="image-popup">
+        <div class="popup-content">
+            <img src="" alt="Popup Image" id="popup-image">
+            <div id="watermark" class="watermark">Prodigy Photography</div>
+            <button class="close-popup-button">&times;</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Prodigy Photography. All rights reserved.</p>
+        <p><a href="terms.html">Terms and Conditions</a> | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://www.paypal.com/sdk/js?client-id=AcRjp8PG8KLQ3WoQuk07s5aKBypyNX9snb3W5dGlBbtGpM5taKsQrYgw2J9t8vK1IN1kyXA37qBSEhnR"></script>
+</body>
+</html>
