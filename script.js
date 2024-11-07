@@ -1,10 +1,10 @@
 // Photo Data
 const photos = [
-    { title: "Roos Mob", thumb: "../secure_images/thumbs/roosmob-thumb.JPG", full: "../secure_images/roosmob.JPG" },
-    { title: "Butterfly - Seaford Rise, SA", thumb: "../secure_images/thumbs/butterfly-thumb.jpg", full: "../secure_images/butterfly.jpg" },
-    { title: "Waterfall - Ingalalla Falls in Normanville, SA", thumb: "../secure_images/thumbs/waterfall-thumb.JPG", full: "../secure_images/waterfall.JPG" },
-    { title: "Rainbow - Seaford Rise, SA", thumb: "../secure_images/thumbs/Rainbow-thumb.jpg", full: "../secure_images/rainbow.JPG" },
-    { title: "Historic Church - Old Noarlunga, SA", thumb: "../secure_images/thumbs/HistoricChurchNoarlunga-thumb.JPG", full: "../secure_images/HistoricChurchNoarlunga.JPG" }
+    { title: "Roos Mob", thumb: "secure_images/thumbs/roosmob-thumb.JPG", full: "secure_images/roosmob.JPG" },
+    { title: "Butterfly - Seaford Rise, SA", thumb: "secure_images/thumbs/butterfly-thumb.jpg", full: "secure_images/butterfly.jpg" },
+    { title: "Waterfall - Ingalalla Falls in Normanville, SA", thumb: "secure_images/thumbs/waterfall-thumb.JPG", full: "secure_images/waterfall.JPG" },
+    { title: "Rainbow - Seaford Rise, SA", thumb: "secure_images/thumbs/Rainbow-thumb.jpg", full: "secure_images/rainbow.JPG" },
+    { title: "Historic Church - Old Noarlunga, SA", thumb: "secure_images/thumbs/HistoricChurchNoarlunga-thumb.JPG", full: "secure_images/HistoricChurchNoarlunga.JPG" }
 ];
 
 // Cart Data
